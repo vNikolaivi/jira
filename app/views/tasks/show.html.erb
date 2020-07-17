@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+<h2>Task Information:</h2>
+<p></p>
+<p>
+
+<p>
+  <strong>Project Name:</strong>
+  <%= @task.project_id %>
+</p>
+
+<p>
+  <strong>Task Title:</strong>
+  <%= @task.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @task.description %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @task.notes %>
+</p>
+
+<p>
+  <strong>Autor:</strong>
+  <%= @task.autor %>
+</p>
+
+<p>
+  <strong>Executor:</strong>
+  <%= @task.executor %>
+</p>
+
+<p>
+  <strong>Estimation Time:</strong>
+  <%= @task.estimation_time %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @task.status %>
+</p>
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %><div align="right">
+

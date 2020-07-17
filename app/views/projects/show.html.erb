@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+<h2>Project Information:</h2>
+<p></p>
+<p>
+
+<p>
+  <strong>Project #:</strong>
+  <%= @project.id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @project.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @project.description %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @project.notes %>
+</p>
+
+<p>
+  <strong>Performer:</strong>
+  <%= @project.performer %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @project.status %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %> |
+<%= link_to 'List all tasks', tasks_path(@project_id) %>
+<div align="right">
+<%= link_to 'Create New Task', new_task_path %></div>
