@@ -1,6 +1,6 @@
 <% if signed_in?(:user) %>
   <% if current_user&.user? %>
-    <li><%= link_to 'Userss', users_path(current_user) %></li>
+    <li><%= link_to 'Users', users_path(current_user) %></li>
     <li><%= link_to 'Projects', projects_path(user_session, @projects) %></li>
  <li><%= link_to 'Tasks', tasks_path(user_session, @tasks) %></li>
 </li>

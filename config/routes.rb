@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
-resources :projects
 resources :users
-resources :tasks
+
+	 resources :projects
+	 resources :tasks do
+put :complete, on: :member
+
+	end
 root to: 'projects#index'
-  devise_for :user#s, path: '', path_names: { sign_in: 'login', sign_out: 'logout'}
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout'}
 	
 
 #get 'projects', as: 'user_root'

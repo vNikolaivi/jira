@@ -32,9 +32,9 @@
   <strong>Status:</strong>
   <%= @project.status %>
 </p>
-
+ 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %> |
-<%= link_to 'List all tasks', tasks_path(@project_id) %>
+
 <div align="right">
 <%= link_to 'Create New Task', new_task_path %></div>

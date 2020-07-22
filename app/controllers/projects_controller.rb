@@ -11,11 +11,15 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+@project = Project.find(params[:id])
+
+@user = current_user
   end
 
   # GET /projects/new
   def new
     @project = Project.new
+	
   end
 
   # GET /projects/1/edit
@@ -26,8 +30,9 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(project_params)
-    respond_to do |format|
+        respond_to do |format|
       if @project.save
+	
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @project }
       else
@@ -53,7 +58,8 @@ class ProjectsController < ApplicationController
 # DELETE /projects/1
   # DELETE /projects/1.json
   def destroy
-    @project.destroy
+  
+@project.destroy
     respond_to do |format|
       format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
       format.json { head :no_content }

@@ -12,9 +12,9 @@
   <% end %>
 
   
-<div class="form-group">
-          <%= form.label :project_id %>
-<%= collection_select( :task, :project_id, Project.all, :id, :title,
+<div class="field">
+          <%= form.label :project_name %>
+<%= collection_select( :task, :project_name, Project.all, :title, :title,
 {}, {:multiple => false})%>
         </div>
 
@@ -33,12 +33,13 @@
     <%= form.text_field :notes %>
   </div>
 
-	<div class="form-group">
+	<div class="field">
           <%= form.label :autor %>
 <%= collection_select( :task, :autor, User.all, :name, :name,
 {}, {:multiple => false})%>
         </div>
-<div class="form-group">
+
+<div class="field">
           <%= form.label :executor %>
 <%= collection_select( :task, :executor, User.all, :name, :name,
 {}, {:multiple => false})%>
@@ -50,9 +51,20 @@
   </div>
 
 <div class="form-group">
+    <%= form.label :priority %>
+    <%= form.select :priority, Task::PRIORITIES %>
+  </div>
+
+<div class="form-group">
     <%= form.label :status %>
     <%= form.select :status, ['new', 'in progress', 'hold', 'done'], :autofocus => true, class: 'form-control' %>
   </div>
+
+<div class="form-group">
+    <%= form.label :completed %>
+    <%= form.check_box :completed %>
+</div>
+ 
 
   <div class="actions">
     <%= form.submit %>

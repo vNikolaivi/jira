@@ -1,4 +1,7 @@
 module ApplicationHelper
+def logged_in?
+!!current_user
+end
 def resource_name
     :user
   end
