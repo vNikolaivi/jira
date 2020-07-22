@@ -1,12 +1,12 @@
-<% if signed_in?(:user) %>
-  <% if current_user&.user? %>
-    <li><%= link_to 'Users', users_path(current_user) %></li>
-    <li><%= link_to 'Projects', projects_path(user_session, @projects) %></li>
- <li><%= link_to 'Tasks', tasks_path(user_session, @tasks) %></li>
-</li>
-    <% end %>
-  <li><%= link_to 'Sign out', destroy_user_session_path(:authenticity_token => form_authenticity_token()) %></li>
-<% else %>
-  <li><%= link_to 'Sign in', new_user_session_path %></li>
-  <li><%= link_to 'Registration', new_user_registration_path %></li>
-<% end %>
+<div class="container">
+  <div class="collapse navbar-collapse">
+    <table>
+      <tr>
+        <td>&nbsp;<%= link_to 'Users', users_path(@users) %>&nbsp;</td>
+        <td>&nbsp;<%= link_to 'Projects', projects_path(@projects) %>&nbsp;</td>
+        <td>&nbsp;<%= link_to 'Tasks', tasks_path(@tasks) %></td>
+        <td> <%= link_to 'Exit', log_out_path, :method => :delete  %></td>
+      </tr>
+    </table>
+  </div>
+</div>

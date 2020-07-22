@@ -1,19 +1,15 @@
 <p id="notice"><%= notice %></p>
+<div>
+  <h1>Tasks</h1>
+  <% @tasks.each do |task| %>
+    <%= render partial: 'task', object: task %>
+  <% end %>
 
-<h1>Tasks</h1>
+  <hr/>
 
-
-<% @tasks.each do |task| %>
-<%= render partial: 'task', object: task %>
-<% end %>
-
-<hr />
-
-<% @completed_tasks.each do |task| %>
-<%= render partial: 'task', object: task %>
-<% end %>
+  <% @completed_tasks.each do |task| %>
+    <%= render partial: 'task', object: task %>
+  <% end %>
 </div>
-
 <br>
-
 <%= link_to 'New Task', new_task_path %>

@@ -2,8 +2,6 @@
 <h2>Project Information:</h2>
 <p></p>
 <p>
-
-<p>
   <strong>Project #:</strong>
   <%= @project.id %>
 </p>
@@ -32,9 +30,9 @@
   <strong>Status:</strong>
   <%= @project.status %>
 </p>
- 
+
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %> |
 
 <div align="right">
-<%= link_to 'Create New Task', new_task_path %></div>
+  <%= link_to 'Create New Task', new_task_path %></div>

@@ -1,38 +1,32 @@
 <p id="notice"><%= notice %></p>
-
 <h1>Projects</h1>
-
 <table>
   <thead>
-    <tr>
-     <th>Project #</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Notes</th>
-      <th>Performer</th>
-      <th>Status</th>
-      <th colspan="3"></th>
-    </tr>
+  <tr>
+    <th>Project #</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Notes</th>
+    <th>Performer</th>
+    <th>Status</th>
+    <th colspan="3"></th>
+  </tr>
   </thead>
-
   <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.id %></td>
-	<td><%= project.title %></td>
-        <td><%= project.description %></td>
-	<td><%= project.notes %></td>
-	<td><%= project.performer %></td>
-	<td><%= project.status %></td>
-       
-	<td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+  <% @projects.each do |project| %>
+    <tr>
+      <td><%= project.id %></td>
+      <td><%= project.title %></td>
+      <td><%= project.description %></td>
+      <td><%= project.notes %></td>
+      <td><%= project.performer %></td>
+      <td><%= project.status %></td>
+      <td><%= link_to 'Show', project %></td>
+      <td><%= link_to 'Edit', edit_project_path(project) %></td>
+      <td><%= link_to 'Destroy', project, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    </tr>
+  <% end %>
   </tbody>
 </table>
-
 <br>
-
 <%= link_to 'New Project', new_project_path %>

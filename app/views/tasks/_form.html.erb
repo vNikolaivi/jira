@@ -2,23 +2,21 @@
   <% if task.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
-
       <ul>
-      <% task.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% task.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-  
-<div class="field">
-          <%= form.label :project_name %>
-<%= collection_select( :task, :project_name, Project.all, :title, :title,
-{}, {:multiple => false})%>
-        </div>
+  <div class="field">
+    <%= form.label :project_name %>
+    <%= collection_select(:task, :project_name, Project.all, :title, :title,
+                          {}, {:multiple => false}) %>
+  </div>
 
-<div class="field">
+  <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
@@ -33,38 +31,37 @@
     <%= form.text_field :notes %>
   </div>
 
-	<div class="field">
-          <%= form.label :autor %>
-<%= collection_select( :task, :autor, User.all, :name, :name,
-{}, {:multiple => false})%>
-        </div>
+  <div class="field">
+    <%= form.label :autor %>
+    <%= collection_select(:task, :autor, User.all, :name, :name,
+                          {}, {:multiple => false}) %>
+  </div>
 
-<div class="field">
-          <%= form.label :executor %>
-<%= collection_select( :task, :executor, User.all, :name, :name,
-{}, {:multiple => false})%>
-        </div>
+  <div class="field">
+    <%= form.label :executor %>
+    <%= collection_select(:task, :executor, User.all, :name, :name,
+                          {}, {:multiple => false}) %>
+  </div>
 
-<div class="field">
+  <div class="field">
     <%= form.label :estimation_time %>
     <%= form.text_field :estimation_time %>
   </div>
 
-<div class="form-group">
+  <div class="form-group">
     <%= form.label :priority %>
     <%= form.select :priority, Task::PRIORITIES %>
   </div>
 
-<div class="form-group">
+  <div class="form-group">
     <%= form.label :status %>
     <%= form.select :status, ['new', 'in progress', 'hold', 'done'], :autofocus => true, class: 'form-control' %>
   </div>
 
-<div class="form-group">
+  <div class="form-group">
     <%= form.label :completed %>
     <%= form.check_box :completed %>
-</div>
- 
+  </div>
 
   <div class="actions">
     <%= form.submit %>
